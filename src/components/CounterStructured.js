@@ -17,15 +17,25 @@ const CounterStructured = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h2>Counter with Folder Structure</h2>
-      <nav>
-        <button onClick={subtract}>-</button>
-        <button onClick={subtract5}>-5</button>
-        <button onClick={reset}>0</button>
-        <button onClick={add}>+</button>
-        <button onClick={add5}>+5</button>
+      <h2 className="key-title">Counter with Folder Structure</h2>
+      <nav className="keys">
+        <button onClick={subtract5} className="key__button">
+          -5
+        </button>
+        <button onClick={subtract} className="key__button">
+          -
+        </button>
+        <button onClick={reset} className="key__button">
+          0
+        </button>
+        <button onClick={add} className="key__button">
+          +
+        </button>
+        <button onClick={add5} className="key__button">
+          +5
+        </button>
       </nav>
-      <h3>{state.counter}</h3>
+      <h3 className="key-counter">{state.counter}</h3>
     </div>
   );
 };

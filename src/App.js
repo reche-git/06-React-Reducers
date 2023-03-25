@@ -6,8 +6,8 @@ import ShoppingCart from "./components/ShoppingCart";
 function App() {
   return (
     <div>
-      <h1>useReducers</h1>
-      <hr />
+      <h1 style={{fontSize:"35px"}}>useReducer</h1>
+      {/* <hr /> */}
       {/* <CrudApi /> */}
       <hr />
       <Counter />
