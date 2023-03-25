@@ -1,6 +1,6 @@
 import Counter from "./components/Counter";
 import CounterStructured from "./components/CounterStructured";
-import { CrudApi } from "./components/CrudApi";
+// import { CrudApi } from "./components/CrudApi";
 import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       <h1>useReducers</h1>
       <hr />
-      <CrudApi />
+      {/* <CrudApi /> */}
       <hr />
       <Counter />
       <hr />
