@@ -34,11 +34,6 @@ const CounterStructured = () => {
       <Modal isOpen={isOpen} closeModal={closeModal}>
         <div className="ExplinationModal">
           <h3>Counter Folder Structured</h3>
-          <img
-            src={folderStructure}
-            className="folderStructureImg"
-            alt="folder-img"
-          />
           <p>
             While the UI is inside the{" "}
             <a
