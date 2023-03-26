@@ -35,7 +35,7 @@ const ShoppingCart = () => {
   };
 
   return (
-    <>
+    <div className="shopping">
       {/* Modal */}
       <Modal isOpen={isOpen} closeModal={closeModal}>
         <div className="ExplinationModal">
@@ -71,7 +71,7 @@ const ShoppingCart = () => {
           <button onClick={clearCart}>Reset Cart</button>
         </article>
       </div>
-    </>
+    </div>
   );
 };
 
