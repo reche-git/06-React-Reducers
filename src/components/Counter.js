@@ -1,6 +1,8 @@
 import { useReducer } from "react";
 import { useModal } from "../hooks/useModal";
 import Modal from "./Modal";
+import joke from "../assets/joke.png"
+import joke2 from "../assets/joke2.png"
 
 const initialState = { counter: 0 };
 
@@ -51,41 +53,58 @@ const Counter = () => {
   const reset = () => dispatch({ type: TYPES.RESET });
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <>
+      <div style={{ textAlign: "center" }}>
+        <button className="btnModal" onClick={openModal}>
+          <h2 className="key-title">Counter</h2>
+        </button>
+        <nav className="keys">
+          <button onClick={subtract5} className="key__button">
+            -5
+          </button>
+          <button onClick={subtract} className="key__button">
+            -
+          </button>
+          <button onClick={reset} className="key__button">
+            0
+          </button>
+          <button onClick={add} className="key__button">
+            +
+          </button>
+          <button onClick={add5} className="key__button">
+            +5
+          </button>
+        </nav>
+        <h3 className="key-counter">{state.counter}</h3>
+        { state.counter === 37 && <img src={joke} className="jokeImg" alt="37!" />}
+        { state.counter === -27 && <img src={joke2} className="jokeImg2" alt="37!" />}
+      </div>
       {/* Modal */}
-      <button className="btnModal" onClick={openModal}>
-        <h2 className="key-title">Counter</h2>
-      </button>
       <Modal isOpen={isOpen} closeModal={closeModal}>
         <div className="ExplinationModal">
-          <h3>React Reducer</h3>
-          <p style={{ textAlign: "center" }}>...</p>
-          <p>...</p>
-          <p>...</p>
-          <p>...</p>
-          <p style={{ textAlign: "center" }}>...</p>
+          <h3>
+            What can I find in this{" "}
+            <a
+              href="https://github.com/reche-git/06-React-Reducers/blob/master/src/components/Counter.js"
+              rel="noreferrer"
+              target="_blank"
+            >
+              component
+            </a>
+            ?
+          </h3>
+          <ul>
+            <li>The initial state of our counter as "initialState".</li>
+            <li>The initializer function that adds 100 to the state.</li>
+            <li>An object named "TYPES" with the type of actions that are available.</li>
+            <li>The function reducer that holds the logic of our state.</li>
+            <li>The counter interface.</li>
+          </ul>
+          <p>Try to get to 37 and see what happens! Or maybe -27...</p>
         </div>
       </Modal>
       {/* Modal */}
-      <nav className="keys">
-        <button onClick={subtract5} className="key__button">
-          -5
-        </button>
-        <button onClick={subtract} className="key__button">
-          -
-        </button>
-        <button onClick={reset} className="key__button">
-          0
-        </button>
-        <button onClick={add} className="key__button">
-          +
-        </button>
-        <button onClick={add5} className="key__button">
-          +5
-        </button>
-      </nav>
-      <h3 className="key-counter">{state.counter}</h3>
-    </div>
+    </>
   );
 };
 

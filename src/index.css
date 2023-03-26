@@ -76,9 +76,24 @@ h2 {
   text-align: center;
 }
 
+.jokeImg {
+  position: absolute;
+  height: 400px;
+  top: 15%;
+  right: 20%;
+}
+
+.jokeImg2 {
+  position: absolute;
+  height: 400px;
+  top: 15%;
+  left: 10%;
+}
+
 .keys {
   display: block;
   margin: auto;
+  user-select: none;
 }
 
 .key__button {

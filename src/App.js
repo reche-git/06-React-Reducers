@@ -9,37 +9,45 @@ function App() {
   const [isOpen, openModal, closeModal] = useModal(false);
 
   return (
-    <div>
+    <>
+      <div>
+        <button className="btnModal" onClick={openModal}>
+          <h1 style={{ fontSize: "35px" }}>useReducer</h1>
+        </button>
+        {/* <hr /> */}
+        {/* <CrudApi /> */}
+        <hr />
+        <Counter />
+        <hr />
+        <CounterStructured />
+        <hr />
+        <ShoppingCart />
+      </div>
       {/* Modal */}
-      <button className="btnModal" onClick={openModal}>
-        <h1 style={{ fontSize: "35px" }}>useReducer</h1>
-      </button>
       <Modal isOpen={isOpen} closeModal={closeModal}>
         <div className="ExplinationModal">
           <h3>React Reducer</h3>
-          <p style={{ textAlign: "center" }}>
-            <div
-              style={{
-                backgroundColor: "#000",
-                fontSize: "16px",
-                padding: "1rem",
-                borderRadius: "15px",
-              }}
-            >
-              <span style={{ color: "#1672D6" }}>const</span>{" "}
-              <span style={{ color: "#DA5E98" }}>[</span>
-              <span style={{ color: "#9CDCFE" }}>state</span>
-              <span>,</span> <span style={{ color: "#9CDCFE" }}>dispatch</span>
-              <span style={{ color: "#DA5E98" }}>]</span> ={" "}
-              <span style={{ color: "#DCDC84" }}>useReducer</span>
-              <span style={{ color: "#DA5E98" }}>(</span>
-              <span style={{ color: "#9CDCFE" }}>reducer</span>
-              <span>,</span>{" "}
-              <span style={{ color: "#9CDCFE" }}>initialArg</span>
-              <span>,</span> <span style={{ color: "#9CDCFE" }}>init</span>
-              <span style={{ color: "#DA5E98" }}>)</span>
-            </div>
-          </p>
+          <div
+            style={{
+              backgroundColor: "#000",
+              fontSize: "16px",
+              padding: "1rem",
+              borderRadius: "15px",
+              textAlign: "center",
+            }}
+          >
+            <span style={{ color: "#1672D6" }}>const</span>{" "}
+            <span style={{ color: "#DA5E98" }}>[</span>
+            <span style={{ color: "#9CDCFE" }}>state</span>
+            <span>,</span> <span style={{ color: "#9CDCFE" }}>dispatch</span>
+            <span style={{ color: "#DA5E98" }}>]</span> ={" "}
+            <span style={{ color: "#DCDC84" }}>useReducer</span>
+            <span style={{ color: "#DA5E98" }}>(</span>
+            <span style={{ color: "#9CDCFE" }}>reducer</span>
+            <span>,</span> <span style={{ color: "#9CDCFE" }}>initialArg</span>
+            <span>,</span> <span style={{ color: "#9CDCFE" }}>init</span>
+            <span style={{ color: "#DA5E98" }}>)</span>
+          </div>
           <p>
             Reducers, as the name suggests, take in two things: previous state
             and an action. Then they reduce it (read it return) to one entity:
@@ -58,8 +66,8 @@ function App() {
               It can be a value of any type.
             </li>
             <li>
-              init: This is function value is optional. and it should return the
-              result of calling init(initialArg).
+              init: This is an initializer function value is optional, and it
+              should return the result of calling init(initialArg).
             </li>
           </ul>
           <p>
@@ -86,15 +94,7 @@ function App() {
         </div>
       </Modal>
       {/* Modal */}
-      {/* <hr /> */}
-      {/* <CrudApi /> */}
-      <hr />
-      <Counter />
-      <hr />
-      <CounterStructured />
-      <hr />
-      <ShoppingCart />
-    </div>
+    </>
   );
 }
 
