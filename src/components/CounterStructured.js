@@ -7,6 +7,7 @@ import {
   CounterReducer,
 } from "../reducers/counterReducer";
 import Modal from "./Modal";
+import folderStructure from "../assets/folderStructure.png";
 
 const CounterStructured = () => {
   const [isOpen, openModal, closeModal] = useModal(false);
@@ -28,41 +29,90 @@ const CounterStructured = () => {
   const reset = () => dispatch({ type: TYPES.RESET });
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <>
       {/* Modal */}
-      <button className="btnModal" onClick={openModal}>
-        <h2 className="key-title">Counter with Folder Structure</h2>
-      </button>
       <Modal isOpen={isOpen} closeModal={closeModal}>
         <div className="ExplinationModal">
-          <h3>React Reducer</h3>
-          <p style={{ textAlign: "center" }}>...</p>
-          <p>...</p>
-          <p>...</p>
-          <p>...</p>
-          <p style={{ textAlign: "center" }}>...</p>
+          <h3>Counter Folder Structured</h3>
+          <img
+            src={folderStructure}
+            className="folderStructureImg"
+            alt="folder-img"
+          />
+          <p>
+            While the UI is inside the{" "}
+            <a
+              href="https://github.com/reche-git/06-React-Reducers/blob/master/src/components/CounterStructured.js"
+              rel="noreferrer"
+              target="_blank"
+            >
+              CounterStructured
+            </a>{" "}
+            component, the logic behind the state is in a different folder
+            called{" "}
+            <a
+              href="https://github.com/reche-git/06-React-Reducers/tree/master/src/reducers"
+              rel="noreferrer"
+              target="_blank"
+            >
+              reducers
+            </a>{" "}
+            where you can find{" "}
+            <a
+              href="https://github.com/reche-git/06-React-Reducers/blob/master/src/reducers/counterReducer.js"
+              rel="noreferrer"
+              target="_blank"
+            >
+              counterReducer
+            </a>{" "}
+            with all the logic behind the manipulation of the state.
+          </p>
+          <p>
+            Additionally, the actions are in a different folder under the name{" "}
+            <a
+              href="https://github.com/reche-git/06-React-Reducers/tree/master/src/actions"
+              rel="noreferrer"
+              target="_blank"
+            >
+              actions
+            </a>
+            . Check the TYPES object on{" "}
+            <a
+              href="https://github.com/reche-git/06-React-Reducers/blob/master/src/actions/counterActions.js"
+              rel="noreferrer"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            !
+          </p>
         </div>
       </Modal>
       {/* Modal */}
-      <nav className="keys">
-        <button onClick={subtract5} className="key__button">
-          -5
+      <div style={{ textAlign: "center" }}>
+        <button className="btnModal" onClick={openModal}>
+          <h2 className="key-title">Counter with Folder Structure</h2>
         </button>
-        <button onClick={subtract} className="key__button">
-          -
-        </button>
-        <button onClick={reset} className="key__button">
-          0
-        </button>
-        <button onClick={add} className="key__button">
-          +
-        </button>
-        <button onClick={add5} className="key__button">
-          +5
-        </button>
-      </nav>
-      <h3 className="key-counter">{state.counter}</h3>
-    </div>
+        <nav className="keys">
+          <button onClick={subtract5} className="key__button">
+            -5
+          </button>
+          <button onClick={subtract} className="key__button">
+            -
+          </button>
+          <button onClick={reset} className="key__button">
+            0
+          </button>
+          <button onClick={add} className="key__button">
+            +
+          </button>
+          <button onClick={add5} className="key__button">
+            +5
+          </button>
+        </nav>
+        <h3 className="key-counter">{state.counter}</h3>
+      </div>
+    </>
   );
 };
 
