@@ -7,7 +7,6 @@ import {
   CounterReducer,
 } from "../reducers/counterReducer";
 import Modal from "./Modal";
-import folderStructure from "../assets/folderStructure.png";
 
 const CounterStructured = () => {
   const [isOpen, openModal, closeModal] = useModal(false);
