@@ -1,21 +1,25 @@
 import { useReducer } from "react";
 import { TYPES } from "../actions/shoppingActions";
+import { useModal } from "../hooks/useModal";
 import {
   shoppingInitialState,
   shoppingReducer,
 } from "../reducers/shoppingReducer";
 import CartItem from "./CartItem";
+import Modal from "./Modal";
 import ProductItem from "./ProductItem";
 
 const ShoppingCart = () => {
+  const [isOpen, openModal, closeModal] = useModal(false);
+
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
   const { products, cart } = state;
-
+  
   const addToCart = (id) => {
     // console.log(id);
     dispatch({ type: TYPES.ADD_TO_CART, payload: id });
   };
-
+  
   const delFromCart = (id, all = false) => {
     // console.log(id, all);
     if (all) {
@@ -32,7 +36,22 @@ const ShoppingCart = () => {
 
   return (
     <div>
-      <h2>Shopping Cart</h2>
+
+{/* Modal */}
+  <button className="btnModal" onClick={openModal}>
+    <h2>Shopping Cart</h2>
+  </button>
+  <Modal isOpen={isOpen} closeModal={closeModal}>
+    <div className="ExplinationModal">
+      <h3>React Reducer</h3>
+      <p style={{ textAlign: "center" }}>...</p>
+      <p>...</p>
+      <p>...</p>
+      <p>...</p>
+      <p style={{ textAlign: "center" }}>...</p>
+    </div>
+  </Modal>
+  {/* Modal */}
       <h3>Products</h3>
       <article className="box grid-responsive">
         {products.map((product) => (

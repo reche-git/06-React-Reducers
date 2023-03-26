@@ -1,9 +1,21 @@
 import { useReducer } from "react";
 import { TYPES } from "../actions/counterActions";
-import { counterInit, counterInitialState, CounterReducer } from "../reducers/counterReducer";
+import { useModal } from "../hooks/useModal";
+import {
+  counterInit,
+  counterInitialState,
+  CounterReducer,
+} from "../reducers/counterReducer";
+import Modal from "./Modal";
 
 const CounterStructured = () => {
-  const [state, dispatch] = useReducer(CounterReducer, counterInitialState, counterInit);
+  const [isOpen, openModal, closeModal] = useModal(false);
+
+  const [state, dispatch] = useReducer(
+    CounterReducer,
+    counterInitialState,
+    counterInit
+  );
 
   const add = () => dispatch({ type: TYPES.INCREMENT });
 
@@ -17,7 +29,21 @@ const CounterStructured = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h2 className="key-title">Counter with Folder Structure</h2>
+      {/* Modal */}
+      <button className="btnModal" onClick={openModal}>
+        <h2 className="key-title">Counter with Folder Structure</h2>
+      </button>
+      <Modal isOpen={isOpen} closeModal={closeModal}>
+        <div className="ExplinationModal">
+          <h3>React Reducer</h3>
+          <p style={{ textAlign: "center" }}>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p style={{ textAlign: "center" }}>...</p>
+        </div>
+      </Modal>
+      {/* Modal */}
       <nav className="keys">
         <button onClick={subtract5} className="key__button">
           -5

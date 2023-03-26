@@ -1,4 +1,6 @@
 import { useReducer } from "react";
+import { useModal } from "../hooks/useModal";
+import Modal from "./Modal";
 
 const initialState = { counter: 0 };
 
@@ -34,6 +36,7 @@ function reducer(state, action) {
 }
 
 const Counter = () => {
+  const [isOpen, openModal, closeModal] = useModal(false);
   //   const [count, setCount] = useState(0);
   const [state, dispatch] = useReducer(reducer, initialState, init);
 
@@ -49,7 +52,21 @@ const Counter = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h2 className="key-title">Counter</h2>
+      {/* Modal */}
+      <button className="btnModal" onClick={openModal}>
+        <h2 className="key-title">Counter</h2>
+      </button>
+      <Modal isOpen={isOpen} closeModal={closeModal}>
+        <div className="ExplinationModal">
+          <h3>React Reducer</h3>
+          <p style={{ textAlign: "center" }}>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p style={{ textAlign: "center" }}>...</p>
+        </div>
+      </Modal>
+      {/* Modal */}
       <nav className="keys">
         <button onClick={subtract5} className="key__button">
           -5
