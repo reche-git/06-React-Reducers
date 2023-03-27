@@ -57,13 +57,6 @@ a:visited {
   color: green;
 }
 
-.grid-responsive {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(400px, 300px));
-  gap: 1rem;
-  justify-content: center;
-}
-
 hr {
   margin: 2rem auto;
 }
@@ -153,6 +146,86 @@ li {
   height: 50px;
 }
 
+/* Counter prototype */
+
+.counter-container {
+  text-align: center;
+  background-color:  #4800bd;
+  margin: auto;
+  height: 350px;
+  width: 500px;
+  border: 5px solid #5c3fff;
+  border-radius: 25px;
+}
+
+.counter {
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  width: 400px;
+  margin: auto;
+}
+.counter .counter-icon {
+  color: var(--main-color);
+  font-size: 30px;
+  padding: 0 0 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.counter .counter-icon:after {
+  content: "";
+  background-color: var(--main-color);
+  height: 30px;
+  width: 30px;
+  transform: translateX(-50%) rotate(45deg);
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+}
+
+.counter .counter-content {
+  height: 200px;
+  color: #fff;
+  background-color: var(--main-color);
+  padding: 15px 20px 35px;
+  position: relative;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.counter .counter-content:before {
+  content: "";
+  background-color: #111;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  top: 0;
+  z-index: -1;
+  clip-path: inherit;
+}
+.counter h3 {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+}
+.counter .counter-value {
+  font-size: 30px;
+  line-height: 90px;
+  font-weight: 600;
+}
+
+.counter.purple {
+  --main-color: #6c5ce7;
+}
+
+@media screen and (max-width: 990px) {
+  .counter {
+    margin-bottom: 40px;
+  }
+}
+
 /* card product test */
 
 .card {
@@ -160,7 +233,7 @@ li {
   width: 320px;
   height: 480px;
   margin-top: 1rem;
-  margin-bottom: 1rem ;
+  margin-bottom: 1rem;
   background: #191919;
   border-radius: 20px;
   overflow: hidden;
@@ -278,70 +351,24 @@ li {
   border-radius: 25px;
 }
 
-/* Counter test */
-
-.counter{
-  font-family: 'Rubik', sans-serif;
-  text-align: center;
-  width: 400px;
-  margin: 0 auto;
-}
-.counter .counter-icon{
-  color: var(--main-color);
-  font-size: 30px;
-  padding: 0 0 30px;
-  overflow: hidden;
-  position: relative;
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(400px, 300px));
+  gap: 1rem;
+  justify-content: center;
 }
 
-.counter .counter-icon:after{
-  content: '';
-  background-color: var(--main-color);
-  height: 30px;
-  width: 30px;
-  transform: translateX(-50%) rotate(45deg);
-  position: absolute;
-  left: 50%;
-  bottom: -15px;
+@media screen and (max-width: 1300px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, minmax(400px, 300px));
+  }
 }
 
-.counter .counter-content{
-  height: 200px;
-  color: #fff;
-  background-color: var(--main-color);
-  padding: 15px 20px 35px;
-  position: relative;
-  z-index: 1;
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
-}
-.counter .counter-content:before{
-  content: '';
-  background-color: #111;
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  top: 0;
-  z-index: -1;
-  clip-path: inherit;
-}
-.counter h3{
-  font-size: 25px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: capitalize;
-  margin: 0 0 10px;
-}
-.counter .counter-value{
-  font-size: 30px;
-  line-height: 90px;
-  font-weight: 600;
+@media screen and (max-width: 1000px) {
+  .grid-responsive {
+    grid-template-columns: repeat(1, minmax(400px, 300px));
+  }
 }
 
-.counter.purple{ --main-color: #6c5ce7; }
-
-@media screen and (max-width:990px){
-  .counter{ margin-bottom: 40px; }
-}
 
 /* ShoppingCart CheckOut prototype styles */
