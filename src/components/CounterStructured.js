@@ -87,24 +87,30 @@ const CounterStructured = () => {
         <button className="btnModal" onClick={openModal}>
           <h2 className="key-title">Counter with Folder Structure</h2>
         </button>
-        <nav className="keys">
-          <button onClick={subtract5} className="key__button">
-            -5
-          </button>
-          <button onClick={subtract} className="key__button">
-            -
-          </button>
-          <button onClick={reset} className="key__button">
-            0
-          </button>
-          <button onClick={add} className="key__button">
-            +
-          </button>
-          <button onClick={add5} className="key__button">
-            +5
-          </button>
-        </nav>
-        <h3 className="key-counter">{state.counter}</h3>
+        <div className="counter purple">
+          <div class="counter-icon"></div>
+          <div className="counter-content">
+            <h3>Let's count!</h3>
+            <nav className="keys">
+              <button onClick={subtract5} className="key__button">
+                -5
+              </button>
+              <button onClick={subtract} className="key__button">
+                -
+              </button>
+              <button onClick={reset} className="key__button">
+                0
+              </button>
+              <button onClick={add} className="key__button">
+                +
+              </button>
+              <button onClick={add5} className="key__button">
+                +5
+              </button>
+            </nav>
+            <h3 className="counter-value">{state.counter}</h3>
+          </div>
+        </div>
       </div>
     </>
   );
