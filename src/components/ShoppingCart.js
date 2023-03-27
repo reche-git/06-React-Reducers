@@ -61,7 +61,7 @@ const ShoppingCart = () => {
             />
           ))}
         </article>
-        <h3>Cart</h3>
+        <h2 style={{textAlign:"center", color:"#fff"}}>Cart</h2>
         <article className="box">
           {cart.map((item, index) => (
             <CartItem key={index} data={item} delFromCart={delFromCart} />

@@ -26,7 +26,6 @@ body {
   box-shadow: 0 0 1rem #00000025 inset;
 }
 
-
 a {
   color: rgb(97, 252, 59);
 }
@@ -64,7 +63,6 @@ a:visited {
   gap: 1rem;
   justify-content: center;
 }
-
 
 hr {
   margin: 2rem auto;
@@ -115,93 +113,101 @@ h2 {
     #f9f9f9 0%,
     #d2d2d2 80%,
     #c0c0c0 100%
-    );
-    font-family: sans-serif;
-    display: inline-block;
-    transition: box-shadow 0.3s ease, transform 0.15s ease;
-    box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #c0c0c0,
+  );
+  font-family: sans-serif;
+  display: inline-block;
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+  box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #c0c0c0,
     0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25),
     -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
-  }
-  .key__button:hover,
-  .key__button:focus {
-    box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 4px 0 #c0c0c0,
+}
+.key__button:hover,
+.key__button:focus {
+  box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 4px 0 #c0c0c0,
     0 2px 35px rgba(#444, 0.3), 2px 2px 4px rgba(#444, 0.25),
     -2px 2px 4px rgba(#444, 0.25), 0 7px 4px rgba(#444, 0.1);
-    transform: translateY(2px);
-  }
-  
-  .key__button:active {
-    box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 0 0 #c0c0c0,
+  transform: translateY(2px);
+}
+
+.key__button:active {
+  box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 0 0 #c0c0c0,
     0 0px 30px rgba(#444, 0.15), 2px 2px 4px rgba(#444, 0.25),
     -2px 2px 4px rgba(#444, 0.25), 0 0px 4px rgba(#444, 0.25);
-    transform: translateY(4px);
-  }
-  
-  .key-counter {
-    font-size: 20px;
-    color: #0400ff;
-  }
-  
-  .key-title {
-    font-size: 25px;
-  }
-  
-  li {
-    margin-bottom: 1rem;
-  }
+  transform: translateY(4px);
+}
 
-  .productImg {
-    height: 50px;
-  }
+.key-counter {
+  font-size: 20px;
+  color: #0400ff;
+}
 
-  /* card product test */
+.key-title {
+  font-size: 25px;
+}
 
-  .card {
-    position: relative;
-    width: 320px;
-    height: 480px;
-    background: #191919;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  
-  .card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    width: 100%;
-    height: 100%;
-    background: #ffce00;
-    transform: skewY(345deg);
-    transition: 0.5s;
-  }
-  
-  .card:hover::before {
-    top: -70%;
-    transform: skewY(390deg);
-  }
-  
-  .card::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-weight: 600;
-    font-size: 6em;
-    color: rgba(0, 0, 0, 0.1);
-  }
-  
-  .card .imgBox {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    z-index: 1;
-  }
-  /*
+li {
+  margin-bottom: 1rem;
+}
+
+.productImg {
+  height: 50px;
+}
+
+/* card product test */
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  margin-top: 1rem;
+  margin-bottom: 1rem ;
+  background: #191919;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 50px 15px #dde048;
+}
+
+.card:hover {
+  box-shadow: 0 0 50px 15px #48abe0;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffce00;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+  box-shadow: 0 0 50px 15px #48abe0;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card .imgBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
   .card .imgBox img {
       max-width: 100%;
       
@@ -213,57 +219,61 @@ h2 {
         
   }
   */
-  .card .contentBox {
-    position: relative;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 2;
-  }
-  
-  .card .contentBox h3 {
-    font-size: 18px;
-    color: white;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .card .contentBox .price {
-    font-size: 24px;
-    color: white;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  
-  .card .contentBox .buy {
-    position: relative;
-    top: 100px;
-    opacity: 0;
-    padding: 10px 30px;
-    margin-top: 15px;
-    color: #000000;
-    text-decoration: none;
-    background: #ffce00;
-    border-radius: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.5s;
-  }
-  
-  .card:hover .contentBox .buy {
-    top: 0;
-    opacity: 1;
-  }
-  
-  .img {
-    height: 200px;
-    width: auto;
-  }
+.card .contentBox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
 
-  .shopping {
-    background: #212121;
-    border-radius: 25px;
-  }
+.card .contentBox h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card .contentBox .price {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card .contentBox .buy {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffce00;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.card .contentBox .buy:hover {
+  cursor: pointer;
+}
+
+.card:hover .contentBox .buy {
+  top: 0;
+  opacity: 1;
+}
+
+.img {
+  height: 200px;
+  width: auto;
+}
+
+.shopping {
+  background: #1f1f1f;
+  border-radius: 25px;
+}
