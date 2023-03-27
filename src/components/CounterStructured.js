@@ -88,6 +88,9 @@ const CounterStructured = () => {
           <h2 className="key-title">Counter with Folder Structure</h2>
         </button>
         <div className="counter purple">
+          <h2 style={{ backgroundColor: "yellow" }}>
+            MAKE A RECTANGULAR BACKGROUND
+          </h2>
           <div class="counter-icon"></div>
           <div className="counter-content">
             <h3>Let's count!</h3>

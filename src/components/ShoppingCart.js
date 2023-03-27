@@ -48,6 +48,7 @@ const ShoppingCart = () => {
         </div>
       </Modal>
       {/* Modal */}
+      
       <div>
         <button className="btnModal" onClick={openModal}>
           <h2 style={{marginTop:"3rem"}}>Shopping Cart</h2>
