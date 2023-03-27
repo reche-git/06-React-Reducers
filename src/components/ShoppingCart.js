@@ -50,9 +50,8 @@ const ShoppingCart = () => {
       {/* Modal */}
       <div>
         <button className="btnModal" onClick={openModal}>
-          <h2>Shopping Cart</h2>
+          <h2 style={{marginTop:"3rem"}}>Shopping Cart</h2>
         </button>
-        <h3>Products</h3>
         <article className="box grid-responsive">
           {products.map((product) => (
             <ProductItem

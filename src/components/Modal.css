@@ -6,6 +6,7 @@
   background: transparent;
   border: none;
   position: relative;
+  color: #fff;
 }
 
 .btnModal:hover {
