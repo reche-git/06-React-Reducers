@@ -10,6 +10,7 @@ export const shoppingInitialState = {
     { id: 6, name: "Vue", price: 600, image: "vue" },
   ],
   cart: [],
+  total: [],
 };
 
 export function shoppingReducer(state, action) {
@@ -30,6 +31,7 @@ export function shoppingReducer(state, action) {
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
             ),
+            total: [...(state.total + newItem.price)],
           }
         : { ...state, cart: [...state.cart, { ...newItem, quantity: 1 }] };
     }

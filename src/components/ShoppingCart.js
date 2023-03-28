@@ -63,18 +63,6 @@ const ShoppingCart = () => {
           ))}
         </article>
         <h2 style={{ textAlign: "center", color: "#fff" }}>Cart</h2>
-        {/* <article className="box">
-          {cart.map((item, index) => (
-            <CartItem
-              key={index}
-              data={item}
-              delFromCart={delFromCart}
-              addToCart={addToCart}
-            />
-          ))}
-          <br />
-          <button onClick={clearCart}>Reset Cart</button>
-        </article> */}
         <CartCheckout
           data={products}
           cart={cart}
@@ -88,3 +76,18 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
+
+{
+  /* <article className="box">
+          {cart.map((item, index) => (
+            <CartItem
+              key={index}
+              data={item}
+              delFromCart={delFromCart}
+              addToCart={addToCart}
+            />
+          ))}
+          <br />
+          <button onClick={clearCart}>Reset Cart</button>
+        </article> */
+}
