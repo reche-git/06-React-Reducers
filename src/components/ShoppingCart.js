@@ -40,12 +40,38 @@ const ShoppingCart = () => {
       {/* Modal */}
       <Modal isOpen={isOpen} closeModal={closeModal}>
         <div className="ExplinationModal">
-          <h3>BANANAAAAAAAA :D</h3>
-          <p style={{ textAlign: "center" }}>...</p>
-          <p>...</p>
-          <p>...</p>
-          <p>...</p>
-          <p style={{ textAlign: "center" }}>...</p>
+          <h3>Do you feel like buying some frameworks?</h3>
+          <p style={{ textAlign: "center" }}>Wellcome to the Framework Shop!</p>
+          <p>
+            This is a fully functional shop with a checkout whose logic is state
+            and actions are stored in the{" "}
+            <a
+              href="https://github.com/reche-git/06-React-Reducers/blob/master/src/reducers/shoppingReducer.js"
+              rel="noreferrer"
+              target="_blank"
+            >
+              shoppingReducer
+            </a>{" "}
+            file.
+          </p>
+          <p>
+            This is an intent to show my understanding in the management of the
+            state and the usage of actions to alter it.
+          </p>
+          <p>
+            Next project is going to be this same one but with Redux Library!
+          </p>
+          <p>
+            Check my{" "}
+            <a
+              href="https://github.com/reche-git"
+              rel="noreferrer"
+              target="_blank"
+            >
+              GitHub
+            </a>{" "}
+            for more!
+          </p>
         </div>
       </Modal>
       {/* Modal */}
