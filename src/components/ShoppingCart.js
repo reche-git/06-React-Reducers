@@ -5,7 +5,7 @@ import {
   shoppingInitialState,
   shoppingReducer,
 } from "../reducers/shoppingReducer";
-import CartItem from "./CartItem";
+import { CartCheckout } from "./CartCheckout";
 import Modal from "./Modal";
 import ProductItem from "./ProductItem";
 
@@ -63,7 +63,7 @@ const ShoppingCart = () => {
           ))}
         </article>
         <h2 style={{ textAlign: "center", color: "#fff" }}>Cart</h2>
-        <article className="box">
+        {/* <article className="box">
           {cart.map((item, index) => (
             <CartItem
               key={index}
@@ -74,7 +74,14 @@ const ShoppingCart = () => {
           ))}
           <br />
           <button onClick={clearCart}>Reset Cart</button>
-        </article>
+        </article> */}
+        <CartCheckout
+          data={products}
+          cart={cart}
+          delFromCart={delFromCart}
+          addToCart={addToCart}
+          clearCart={clearCart}
+        />
       </div>
     </div>
   );

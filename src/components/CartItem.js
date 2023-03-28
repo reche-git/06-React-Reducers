@@ -2,12 +2,6 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
   let { id, name, price, image, quantity } = data;
 
   return (
-    <div className="bodyContainer">
-      <div className="CartContainer">
-        <div className="HeaderCart">
-          <h3 className="HeadingCart">Shopping Cart</h3>
-        </div>
-
         <div className="Cart-Items">
           <div className="image-box">
             <img
@@ -19,10 +13,8 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
           </div>
           <div className="about">
             <h1 className="title">{name}</h1>
-            {/* <h3 className="subtitle">250ml</h3> */}
           </div>
           <div className="counterCart">
-            {/* ADD THE FUNCTION AddToCart() to the "+" btn div */}
             <div className="btn" onClick={() => delFromCart(id)}>
               -
             </div>
@@ -41,20 +33,6 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
             </div>
           </div>
         </div>
-
-        <hr className="cartHr"/>
-        <div className="checkout">
-          <div className="total">
-            <div>
-              <div className="Subtotal">Sub-Total</div>
-              <div className="items">2 items</div>
-            </div>
-            <div className="total-amount">$6.18</div>
-          </div>
-          <button className="button">Checkout</button>
-        </div>
-      </div>
-    </div>
   );
 };
 
