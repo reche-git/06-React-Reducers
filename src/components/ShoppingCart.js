@@ -67,7 +67,6 @@ const ShoppingCart = () => {
         <CartCheckout
           state={state}
           data={products}
-          cart={cart}
           delFromCart={delFromCart}
           addToCart={addToCart}
           clearCart={clearCart}

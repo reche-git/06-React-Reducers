@@ -5,11 +5,10 @@ export const CartCheckout = ({
   state,
   delFromCart,
   addToCart,
-  cart,
   clearCart,
 }) => {
   const { quantity } = data;
-  const { total } = state;
+  const { total, cart } = state;
   // console.log(total);
 
   return (

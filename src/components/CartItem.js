@@ -14,6 +14,7 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
         </div>
         <div className="about">
           <h1 className="title">{name}</h1>
+          <h3 className="subtitle">${price} per unit</h3>
         </div>
         <div className="counterCart">
           <div className="btn" onClick={() => delFromCart(id)}>

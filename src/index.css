@@ -55,11 +55,6 @@ hr {
   margin: 2rem auto;
 }
 
-h1,
-h2 {
-  text-align: center;
-}
-
 .jokeImg {
   position: absolute;
   height: 367px;
@@ -406,6 +401,7 @@ li {
   color: #e44c4c;
   cursor: pointer;
   border-bottom: 1px solid #e44c4c;
+  user-select: none;
 }
 
 .Cart-Items {
