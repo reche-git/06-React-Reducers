@@ -85,7 +85,7 @@ const Counter = () => {
 
       <div className="counter-container">
         {state.counter === -27 && (
-          <img src={joke2} className="jokeImg2" alt="37!" />
+          <img src={joke2} className="jokeImg2" alt="-27!" />
         )}
         <button className="btnModal" onClick={openModal}>
           <h2 className="key-title">Counter</h2>

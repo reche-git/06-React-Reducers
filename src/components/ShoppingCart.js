@@ -13,7 +13,7 @@ const ShoppingCart = () => {
   const [isOpen, openModal, closeModal] = useModal(false);
 
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
-  const { products, cart } = state;
+  const { products } = state;
   // console.log(state);
 
   const addToCart = (id) => {
@@ -63,7 +63,6 @@ const ShoppingCart = () => {
             />
           ))}
         </article>
-        <h2 style={{ textAlign: "center", color: "#fff" }}>Cart</h2>
         <CartCheckout
           state={state}
           data={products}
