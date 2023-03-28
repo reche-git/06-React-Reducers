@@ -4,8 +4,8 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
   return (
     <div className="bodyContainer">
       <div className="CartContainer">
-        <div className="Header">
-          <h3 className="Heading">Shopping Cart</h3>
+        <div className="HeaderCart">
+          <h3 className="HeadingCart">Shopping Cart</h3>
         </div>
 
         <div className="Cart-Items">
@@ -21,12 +21,12 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
             <h1 className="title">{name}</h1>
             {/* <h3 className="subtitle">250ml</h3> */}
           </div>
-          <div className="counter">
+          <div className="counterCart">
             {/* ADD THE FUNCTION AddToCart() to the "+" btn div */}
             <div className="btn" onClick={() => delFromCart(id)}>
               -
             </div>
-            <div className="count">{quantity}</div>
+            <div className="countCart">{quantity}</div>
             <div className="btn" onClick={() => addToCart(id)}>
               +
             </div>
@@ -42,7 +42,7 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
           </div>
         </div>
 
-        <hr />
+        <hr className="cartHr"/>
         <div className="checkout">
           <div className="total">
             <div>
