@@ -88,7 +88,7 @@ const CounterStructured = () => {
           <h2 className="key-title">Counter with Folder Structure</h2>
         </button>
         <div className="counter purple">
-          <div class="counter-icon"></div>
+          <div className="counter-icon"></div>
           <div className="counter-content">
             <h3>Let's count!</h3>
             <nav className="keys">

@@ -20,12 +20,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.box {
-  padding: 1rem;
-  margin: 1rem;
-  box-shadow: 0 0 1rem #00000025 inset;
-}
-
 a {
   color: rgb(97, 252, 59);
 }
@@ -232,8 +226,7 @@ li {
   position: relative;
   width: 320px;
   height: 480px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
   background: #191919;
   border-radius: 20px;
   overflow: hidden;
@@ -353,20 +346,20 @@ li {
 
 .grid-responsive {
   display: grid;
-  grid-template-columns: repeat(3, minmax(400px, 300px));
+  grid-template-columns: repeat(3, minmax(400px, 400px));
   gap: 1rem;
   justify-content: center;
 }
 
 @media screen and (max-width: 1300px) {
   .grid-responsive {
-    grid-template-columns: repeat(2, minmax(400px, 300px));
+    grid-template-columns: repeat(2, minmax(400px, 400px));
   }
 }
 
 @media screen and (max-width: 1000px) {
   .grid-responsive {
-    grid-template-columns: repeat(1, minmax(400px, 300px));
+    grid-template-columns: repeat(1, minmax(400px, 400px));
   }
 }
 
