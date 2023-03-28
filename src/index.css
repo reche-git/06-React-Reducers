@@ -366,10 +366,9 @@ li {
 /* ShoppingCart CheckOut prototype styles */
 
 .bodyContainer {
-  margin: 0;
 	padding: 0;
-	background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
-	height: 100vh;
+	background: linear-gradient(to bottom right, #52a3ff, #3284ff);
+	/* height: 100vh; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -377,7 +376,8 @@ li {
 
 .CartContainer {
   width: 70%;
-  height: 80%;
+  /* height: 80%; */
+  margin: 5rem;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 10px 20px #1687d933;
@@ -509,6 +509,7 @@ li {
   float: right;
   margin-right: 5%;
   width: 28%;
+  margin-bottom: 1rem;
 }
 .total {
   width: 100%;

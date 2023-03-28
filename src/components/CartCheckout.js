@@ -2,12 +2,15 @@ import CartItem from "./CartItem";
 
 export const CartCheckout = ({
   data,
+  state,
   delFromCart,
   addToCart,
   cart,
   clearCart,
 }) => {
   const { quantity } = data;
+  const { total } = state;
+  // console.log(total);
 
   return (
     <div className="bodyContainer">
@@ -15,7 +18,7 @@ export const CartCheckout = ({
         <div className="HeaderCart">
           <h3 className="HeadingCart">Shopping Cart</h3>
           <h5 className="Action" onClick={clearCart}>
-            Remove all
+            Clear Cart 🗑️
           </h5>
         </div>
 
@@ -37,7 +40,7 @@ export const CartCheckout = ({
               <div className="items">{quantity} Items</div>
             </div>
             {/* PASS QUANTITY AND PRICE FROM CARTITEM TO HERE WITH A STATE CONST */}
-            <div className="total-amount">$0</div>
+            <div className="total-amount">${total}</div>
           </div>
           <button className="button">Checkout</button>
         </div>

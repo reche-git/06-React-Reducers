@@ -10,7 +10,7 @@ export const shoppingInitialState = {
     { id: 6, name: "Vue", price: 600, image: "vue" },
   ],
   cart: [],
-  total: [],
+  total: 0,
 };
 
 export function shoppingReducer(state, action) {
@@ -19,7 +19,7 @@ export function shoppingReducer(state, action) {
       let newItem = state.products.find(
         (product) => product.id === action.payload
       );
-      // console.log(newItem);
+      // console.log(newItem.price);
 
       let itemInCart = state.cart.find((item) => item.id === newItem.id);
 
@@ -31,12 +31,17 @@ export function shoppingReducer(state, action) {
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
             ),
-            total: [...(state.total + newItem.price)],
+            total: state.total + newItem.price,
           }
-        : { ...state, cart: [...state.cart, { ...newItem, quantity: 1 }] };
+        : {
+            ...state,
+            cart: [...state.cart, { ...newItem, quantity: 1 }],
+            total: state.total + newItem.price,
+          };
     }
     case TYPES.REMOVE_ONE_FROM_CART: {
       let itemToDelete = state.cart.find((item) => item.id === action.payload);
+      // console.log(itemToDelete);
 
       return itemToDelete.quantity > 1
         ? {
@@ -46,16 +51,22 @@ export function shoppingReducer(state, action) {
                 ? { ...item, quantity: item.quantity - 1 }
                 : item
             ),
+            total: state.total - itemToDelete.price,
           }
         : {
             ...state,
             cart: state.cart.filter((item) => item.id !== action.payload),
+            total: state.total - itemToDelete.price,
           };
     }
     case TYPES.REMOVE_ALL_FROM_CART: {
+      let itemToDelete = state.cart.find((item) => item.id === action.payload);
+      // console.log(itemToDelete);
+
       return {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
+        total: state.total - itemToDelete.quantity * itemToDelete.price,
       };
     }
     case TYPES.CLEAR_CART: {

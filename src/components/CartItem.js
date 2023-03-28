@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const CartItem = ({ data, delFromCart, addToCart }) => {
   let { id, name, price, image, quantity } = data;
 
@@ -28,9 +26,6 @@ const CartItem = ({ data, delFromCart, addToCart }) => {
         </div>
         <div className="prices">
           <div className="amount">${price * quantity}.00</div>
-          <div className="save">
-            <u>Save for later</u>
-          </div>
           <div className="remove">
             <u onClick={() => delFromCart(id, true)}>Remove All</u>
           </div>

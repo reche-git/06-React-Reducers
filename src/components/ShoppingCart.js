@@ -14,6 +14,7 @@ const ShoppingCart = () => {
 
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
   const { products, cart } = state;
+  // console.log(state);
 
   const addToCart = (id) => {
     // console.log(id);
@@ -64,6 +65,7 @@ const ShoppingCart = () => {
         </article>
         <h2 style={{ textAlign: "center", color: "#fff" }}>Cart</h2>
         <CartCheckout
+          state={state}
           data={products}
           cart={cart}
           delFromCart={delFromCart}
