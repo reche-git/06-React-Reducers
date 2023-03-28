@@ -1,10 +1,71 @@
-const CartItem = ({ data, delFromCart }) => {
+const CartItem = ({ data, delFromCart, addToCart }) => {
   let { id, name, price, image, quantity } = data;
 
   return (
-    <div style={{ borderBottom: "thin solid gray" }}>
-      <h4>{name}</h4>
-      <img
+    <div className="bodyContainer">
+      <div className="CartContainer">
+        <div className="Header">
+          <h3 className="Heading">Shopping Cart</h3>
+        </div>
+
+        <div className="Cart-Items">
+          <div className="image-box">
+            <img
+              className="img"
+              src={require(`../assets/products/${image}.png`)}
+              alt="product"
+              style={{ height: "60px" }}
+            />
+          </div>
+          <div className="about">
+            <h1 className="title">{name}</h1>
+            {/* <h3 className="subtitle">250ml</h3> */}
+          </div>
+          <div className="counter">
+            {/* ADD THE FUNCTION AddToCart() to the "+" btn div */}
+            <div className="btn" onClick={() => delFromCart(id)}>
+              -
+            </div>
+            <div className="count">{quantity}</div>
+            <div className="btn" onClick={() => addToCart(id)}>
+              +
+            </div>
+          </div>
+          <div className="prices">
+            <div className="amount">${price * quantity}.00</div>
+            <div className="save">
+              <u>Save for later</u>
+            </div>
+            <div className="remove">
+              <u onClick={() => delFromCart(id, true)}>Remove All</u>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <div className="checkout">
+          <div className="total">
+            <div>
+              <div className="Subtotal">Sub-Total</div>
+              <div className="items">2 items</div>
+            </div>
+            <div className="total-amount">$6.18</div>
+          </div>
+          <button className="button">Checkout</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CartItem;
+
+// NOTE: EDIT CSS WITH CART CHECKOUT PROTOTYPE
+
+{
+  /* <div style={{ borderBottom: "thin solid gray" }}>
+       <h4>{name}</h4>
+       <img
         className="productImg"
         src={require(`../assets/products/${image}.png`)}
         alt="product"
@@ -14,10 +75,5 @@ const CartItem = ({ data, delFromCart }) => {
       </h5>
       <button onClick={() => delFromCart(id)}>🗑️</button>
       <button onClick={() => delFromCart(id, true)}>🗑️ All</button>
-    </div>
-  );
-};
-
-export default CartItem;
-
-// EDIT CSS WITH CART CHECKOUT PROTOTYPE
+    </div> */
+}
