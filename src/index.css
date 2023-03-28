@@ -389,7 +389,7 @@ li {
 
 .bodyContainer {
   padding: 0;
-  background: linear-gradient(to bottom right, #52a3ff, #3284ff);
+  background: #1f1f1f;
   /* height: 100vh; */
   display: flex;
   justify-content: center;
@@ -493,6 +493,7 @@ li {
 .prices {
   height: 100%;
   text-align: right;
+  width: 110px;
 }
 .amount {
   padding-top: 20px;
